@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+<title>Ubicacion-usuario</title>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+    
+<body>
+<script type="text/javascript">
+
+$.get("http://ipinfo.io", function (response) {
+    $("#ip").html("IP: " + response.ip);
+    $("#address").html("Location: " + response.city + ", " + response.region+", "+ response.country);
+    var ciudad =response.city;
+     var estado =response.region;
+      var pais =response.country;
+     $( "#entrada" ).val( "Ubicación: " +response.city + ", " + response.region+", "+ response.country );
+    }, "jsonp");
+
+$(document).ready(function() {
+
+});
+</script>
+<h3>Client side IP geolocation using <a href="http://ipinfo.io">ipinfo.io</a></h3>
+
+<hr/>
+<div id="ip"></div>
+<div id="Entrada"></div>
+
+<?php
+    
+?>
+
+</body>
+</html>
